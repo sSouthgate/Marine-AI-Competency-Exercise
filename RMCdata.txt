@@ -1,0 +1,8 @@
+$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74
+
+Link to decimal degrees wiki page to learn how to convert.
+https://en.wikipedia.org/wiki/Decimal_degrees
+
+Splitting interger and decimal for floats
+https://stackoverflow.com/questions/6681743/splitting-a-number-into-the-integer-and-decimal-parts
+
