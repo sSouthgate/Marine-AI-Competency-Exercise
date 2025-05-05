@@ -58,7 +58,7 @@ This means we can isolate the first two to three characters to determine the deg
 
 This supplies us with the variables to create a DMS coordonate (D°, M', S'').
 From the DMS we can easily determine the Decimal Degree following this formula: 
-$D_dec_ = D° + (M/60) + (S/3600)$
+$D_(dec) = D° + (M/60) + (S/3600)$
 
 Running `convLat()` or `convLng()` will return the decimal degree of a supplied RMC message when calling the class. Alternativly `convPosition()` can be used to return both Latitude and Longitude.
 
