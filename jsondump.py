@@ -17,10 +17,12 @@ class jsondump:
         }
 
     def jsonexport(self):
-        filePath = "../Marine AI Competency Exercise/%s/" % self.date
+        filePath = "/Marine AI Competency Exercise/%s/" % self.date
+
         if os.path.exists(filePath):
             with open("/Marine AI Competency Exercise/%s/rmc_%s.json" % (self.date, self.time), "w") as outfile:
                 json.dump(self.lib, outfile)
+
         if not os.path.exists(filePath):
             os.mkdir(filePath)
             with open("/Marine AI Competency Exercise/%s/rmc_%s.json" % (self.date, self.time), "w") as outfile:

@@ -34,12 +34,13 @@ class checksum:
 
     def checksumValidate(self):
         _, _, calc = self.checksumResult()
-        return self.__cksum == calc
+        # Lower function enssures no case sensitive issues occur for instance with 0x2b and 0x2B
+        return self.__cksum.lower() == calc.lower()
 
 
 if __name__ == "__main__":
 
-    RMCmessage = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
+    RMCmessage = "$GPRMC,203522.00,A,5109.0262308,N,11401.8407342,W,0.004,133.4,130522,0.0,E,D*2B"
     nmea = checksum(RMCmessage)
     print("parsed result:", nmea.checksumResult())
     print("checksum is:", nmea.checksumValidate())
