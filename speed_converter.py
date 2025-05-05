@@ -7,11 +7,15 @@ class speed_convert:
         self.__knToMps = 1852/3600
 
     def knotsToMps(self):
+        """Returns the speed of the RMS Data in meters per second.
+        """
         # Convert knots into m/s
         self.speed = round(self.__RMCspeed * self.__knToMps, 4)
         return (self.speed)
 
     def getCog(self):
+        """Returns the Course Over Ground value in the RMS Data and returns an int.
+        """
         return (self.__cog)
 
 

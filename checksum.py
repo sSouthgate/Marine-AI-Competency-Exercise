@@ -1,5 +1,6 @@
 import re
 
+
 class checksum:
     def __init__(self, RMCdata):
         if RMCdata.startswith("$"):
@@ -33,7 +34,7 @@ class checksum:
 
     def checksumValidate(self):
         _, _, calc = self.checksumResult()
-        # Lower function enssures no case sensitive issues occur for instance with 0x2b and 0x2B
+        # lower() enssures no case sensitive issues occur for instance with 0x2b and 0x2B
         return self.__cksum.lower() == calc.lower()
 
 

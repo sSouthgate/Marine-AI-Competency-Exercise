@@ -15,7 +15,7 @@ RMCdata5 = "$GPRMC,092750.000,A,5321.6802,N,00630.3372,W,0.02,31.66,280511,,,A*6
 
 
 def main(RMCdata):
-    """Input the RMC Data String into the main function to retreive position and speed information to terminal and to a .json file with the date
+    """Input the RMC Data String into the main function to retreive position and speed information to terminal and to a .json file with the date and time
     """
     cksum = checksum(RMCdata)
     if cksum.checksumValidate() == True:

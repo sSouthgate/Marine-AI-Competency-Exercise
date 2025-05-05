@@ -40,7 +40,7 @@ This means we can isolate the first two to three characters to determine the deg
 
 This supplies us with the variables to create a DMS coordonate (D°, M', S'').
 From the DMS we can easily determine the Decimal Degree following this formula: 
-$D_dec = D° + M/60 + S/3600$
+$D_d_e_c = D° + (M/60) + (S/3600)$
 
 Running `convLat()` or `convLng()` will return the decimal degree of a supplied RMC message when calling the class. Alternativly `convPosition()` can be used to return both Latitude and Longitude.
 
@@ -70,15 +70,15 @@ The suite uses known valid and unvalid NMEA sentences the test the various funct
 
 ## Lessons Learned:
 
-I had never been required to run a checksum. This project has taught me the value in using them but also how to look for the information used to validate them.
+I had never been required to run a checksum. This project has taught me the value in using them but also how to look for the information used to validate them. Trying out different NMEA sentences allowed me to see errors and oversights originaly made.
 
-Parsing data was also fairly new to me, I have learned alot about manipulating data in python and utilising the languages strengths to simplify certain functions (Turning a string into a float or an int).
+Parsing data was also fairly new to me, I have learned alot about manipulating data in python and utilising the languages strengths to simplify certain functions (Turning a string into a float or an int). 
+Using a RegEx could be very valuable tool to use to make the code more robust, but validating the checksum also validates the format in a way.
 
-I am not entirely sure how a ReadMe.md for an excercise such as this should present. SO I have opted for explaning the different classes and functions used to achieve the different tasks.
+Keeping track of many variable names and convensions can be tricky and I still need more experience so that I don't confuse myself.
+Reusing the same ones within an isolated class keeps things easier to read and memorise what they represent like sticking to `RMCdata`.
 
-## Improvements:
-
-
+I am not entirely sure how a ReadMe.md for an excercise such as this should present. So I have opted for explaning the different classes and functions used to achieve the different tasks. AS well as what I have learned.
 
 ## Sources:
 Here are all the ressources I used to achieve the task:
