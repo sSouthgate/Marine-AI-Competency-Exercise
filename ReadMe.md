@@ -1,7 +1,7 @@
 # Marine-AI-Competency-Exercise
 Small competency exercise designed by Marine AI, relating to their activites.
 
-The aim is to derive, from a given NMEA 0183 sentence, the position, course and speed of a given vessel.
+The aim is to derive, from a given NMEA 0183 sentence, the position, course and speed of a given vessel.<br>
 The program should create a JSON file with the desired information, named with current time and placed within a folder marked to the current date.
 
 It must adeer to OOP principles and the Pep8 style guide.
@@ -17,7 +17,7 @@ python3 '.\Marine AI Competency Exercise\main.py'
 ```
 
 # Building and running a docker container
-This assumes you have docker installed.
+This assumes you have docker installed.<br>
 cd into the `Marine_AI_Competency_Exercise` directory and run
 ```bash
 docker build -t nmea_decode .
