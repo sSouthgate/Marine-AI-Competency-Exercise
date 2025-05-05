@@ -9,6 +9,7 @@ cksum = checksum(RMCdata)
 coordonates = position_convert(RMCdata)
 speed = speed_convert(RMCdata)
 
+
 def main():
     if cksum.checksumValidate() == True:
         print("chesksum successfully validated")
@@ -17,10 +18,11 @@ def main():
         sog = speed.knotsToMps()
         cog = speed.getCog()
 
-        jsonexport = jsondump(lat,lng,sog,cog)
+        jsonexport = jsondump(lat, lng, sog, cog)
         jsonexport.jsonexport()
         print(jsonexport.lib)
     else:
         print("Failed to validate checksum")
-        
+
+
 main()

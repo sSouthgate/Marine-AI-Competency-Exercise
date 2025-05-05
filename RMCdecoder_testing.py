@@ -10,10 +10,12 @@ date = date.today().strftime("%Y-%m-%d")
 # Split the RMC Message string into a list with "," as delimiter
 splitRMC = RMCmessage.split(',')
 
+
 def knotsToMps(input):
     # Convert knots into m/s
     speed = round(input * 1852 * 0.0002777778, 2)
-    return(speed)
+    return (speed)
+
 
 def convDecDeg(coord):
     DecDeg = math.modf(coord)
@@ -23,7 +25,8 @@ def convDecDeg(coord):
     # Manipulates decimal of minutes to obtain seconds
     Sec = round(Min[0] * 60, 4)
     Min = int(Min[1])
-    return(Deg, Min, Sec)
+    return (Deg, Min, Sec)
+
 
 lat = convDecDeg(float(splitRMC[3]))
 lon = convDecDeg(float(splitRMC[5]))
@@ -38,7 +41,7 @@ jsonexport = {
     "COG": cog
 }
 
-with open("rmc_%s.json" %date, "w") as outfile:
+with open("rmc_%s.json" % date, "w") as outfile:
     json.dump(jsonexport, outfile)
 # Print all to terminal
-print("\nLat =", lat, "Lon =", lon, "\nSOG =",sog,"\nCOG =", cog)
+print("\nLat =", lat, "Lon =", lon, "\nSOG =", sog, "\nCOG =", cog)

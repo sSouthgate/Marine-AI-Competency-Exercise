@@ -15,12 +15,12 @@ class jsondump:
         }
 
     def jsonexport(self):
-        with open("rmc_%s.json" %self.date, "w") as outfile:
+        with open("rmc_%s.json" % self.date, "w") as outfile:
             json.dump(self.lib, outfile)
 
-    
-if __name__== "__main__":
-    
+
+if __name__ == "__main__":
+
     RMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
     coordonates = position_convert(RMCdata)
     speed = speed_convert(RMCdata)
@@ -28,5 +28,5 @@ if __name__== "__main__":
     lon = coordonates.convLng()
     sog = speed.knotsToMps()
     cog = speed.getCog()
-    jsonexport = jsondump(lat,lon,sog,cog)
+    jsonexport = jsondump(lat, lon, sog, cog)
     jsonexport.jsonexport()
