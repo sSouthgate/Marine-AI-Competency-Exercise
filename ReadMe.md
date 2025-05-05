@@ -16,7 +16,7 @@ cd into the `.\Marine_AI_Competency_Exercise` directory and run
 python3 '.\Marine AI Competency Exercise\main.py'
 ```
 
-### Building and running a docker container
+### Building and running as a docker container
 This assumes you have docker installed.<br>
 cd into the `Marine_AI_Competency_Exercise` directory and run
 ```bash
