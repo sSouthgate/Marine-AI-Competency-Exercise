@@ -6,7 +6,7 @@ The program should create a JSON file with the desired information, named with c
 
 It must adeer to OOP principles and the Pep8 style guide.
 
-**GitHub Profile:** https://github.com/sSouthgate
+**GitHub Repository:** https://github.com/sSouthgate/Marine-AI-Competency-Exercise
 
 ## Running the Program (`main()`):
 
