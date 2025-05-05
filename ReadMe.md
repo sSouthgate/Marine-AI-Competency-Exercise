@@ -149,5 +149,17 @@ https://www.reddit.com/r/learnprogramming/comments/vxfku6/how_to_write_a_readme/
 **ReadMe.md template:**
 https://github.com/alec-chernicki/portfolio-template/tree/master
 
-**Writing mathematical expressions (for GitHub ReadMe)**
+**Writing mathematical expressions (for GitHub ReadMe):**
 https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions
+
+**How to “Dockerize” Your Python Applications:**
+https://www.docker.com/blog/how-to-dockerize-your-python-applications/
+
+**Writing a Dockerfile:**
+https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/
+
+**Dockerfile reference:**
+https://docs.docker.com/reference/dockerfile/#add
+
+**Docker Volumes:**
+https://docs.docker.com/engine/storage/volumes/
