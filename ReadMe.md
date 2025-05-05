@@ -8,6 +8,15 @@ It must adeer to OOP principles and the Pep8 style guide.
 
 **GitHub Profile:** https://github.com/sSouthgate
 
+## Running the Program (`main()`):
+
+Running the main program will prompt the user to input an NMEA sentence.
+Several NMEA sentences are provided in `NMEA_Sentences.txt` for validation of the written code.
+
+It will then run and print the JSON string to the terminal after creating the associated file and folder.
+
+cd into 
+`python '.\Marine AI Competency Exercise\main.py'`
 
 ## How It's Made:
 
@@ -56,11 +65,6 @@ Running the `knotsToMps()` function will return the converted value.
 
 By using the returned values of all previous functions we can use the `jsonexport()` function to export that data into the desired JSON format and creating the required folders and file nomenclature.
 
-## Running the Program (`main()`):
-
-Running the main program will use the given RMCdata string to create the JSON file and print it to the terminal.
-
-Several NMEA sentences are provided for validation of the written code.
 
 ## Testing Suite:
 

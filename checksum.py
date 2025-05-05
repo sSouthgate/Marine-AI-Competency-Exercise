@@ -9,10 +9,22 @@ class checksum:
             self.__rmcData = RMCdata
 
     def __parseNMEA(self):
-        # Split string into 2 parts from the *
-        self.__nmeaData, self.__cksum = re.split('\*', self.__rmcData)
-        # Convert the checksum result into hex for verification
-        self.__cksum = '0x' + self.__cksum
+        try:
+            if "*" not in self.__rmcData:
+                raise ValueError("NMEA Sentence does not contain '*' as delimter for checksum")
+            
+            __sentence = re.split("\*", self.__rmcData)
+
+            if len(__sentence) !=2:
+                raise ValueError("RMC Data error - expected single '*' seperating data and checksum")
+            
+            # Split string into 2 parts from the *
+            self.__nmeaData, self.__cksum = __sentence
+            # Convert the checksum result into hex for verification
+            self.__cksum = "0x" + self.__cksum
+        
+        except Exception as e:
+            raise ValueError(f"Error parsing NMEA: {e}")
 
     def __checksumCalc(self):
         self.__calc_cksum = 0
@@ -40,7 +52,7 @@ class checksum:
 
 if __name__ == "__main__":
 
-    RMCmessage = "$GPRMC,203522.00,A,5109.0262308,N,11401.8407342,W,0.004,133.4,130522,0.0,E,D*2B"
+    RMCmessage = "just*a* string"
     nmea = checksum(RMCmessage)
     print("parsed result:", nmea.checksumResult())
     print("checksum is:", nmea.checksumValidate())
