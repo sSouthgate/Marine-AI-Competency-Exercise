@@ -6,4 +6,4 @@ WORKDIR /usr/local/app/Marine_AI_Competency_Exercise
 
 ADD main.py checksum.py pos_converter.py speed_converter.py jsondump.py testsuite.py NMEA_Sentences.txt /usr/local/app/Marine_AI_Competency_Exercise/
 
-CMD ["python", "/usr/local/app/Marine_AI_Competency_Exercise/main.py"]
+CMD ["python", "./main.py"]
