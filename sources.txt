@@ -1,0 +1,32 @@
+Decimal degrees wiki page to learn how to convert:
+https://en.wikipedia.org/wiki/Decimal_degrees
+
+Splitting interger and decimal for floats:
+https://stackoverflow.com/questions/6681743/splitting-a-number-into-the-integer-and-decimal-parts
+
+Knot wiki page to get convertion numbers:
+https://en.wikipedia.org/wiki/Knot_(unit)
+
+Meter per hour to meter per second converter for conversion table:
+https://www.unitconverters.net/speed/meter-hour-to-meter-second.htm
+
+Writting to a JSON file in python with json python package
+https://www.geeksforgeeks.org/reading-and-writing-json-to-a-file-in-python/
+
+How to calculate NMEA checksum:
+https://rietman.wordpress.com/2008/09/25/how-to-calculate-the-nmea-checksum/
+
+NMEA sentence checksum (Python recipe):
+https://code.activestate.com/recipes/576789-nmea-sentence-checksum/
+
+NMEA 0183 wiki page (FR):
+https://fr.wikipedia.org/wiki/NMEA_0183
+
+Converting Degrees, Minutes, and Seconds to Decimal Degrees - Vocabulary and Equations:
+https://study.com/skill/learn/how-to-convert-degrees-minutes-seconds-to-decimal-degrees-explanation.html
+
+Pep8 Style Guide:
+https://peps.python.org/pep-0008/
+
+autopep8 for VSCode:
+https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8

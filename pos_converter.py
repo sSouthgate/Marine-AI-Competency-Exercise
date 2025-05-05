@@ -29,11 +29,11 @@ class position_convert:
     def __convDecDeg(self, coord, coordIndicator, x):
 
         self.__DMS(coord, coordIndicator, x)
-        decDeg = round(self.__dec + self.__min/60 + self.__sec, 4)
+        self.__decDeg = round(self.__dec + self.__min/60 + self.__sec, 4)
         if coordIndicator == "S" or coordIndicator == "W":
-            decDeg *= -1
+            self.__decDeg *= -1
         # return(self.__DMS(coord, coordIndicator, x),decDeg)
-        return (decDeg)
+        return (self.__decDeg)
 
     def convLat(self):
         """Returns the latitude of the RMS Data in Decimal Degrees

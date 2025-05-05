@@ -1,6 +1,6 @@
 from checksum import checksum
 from pos_converter import position_convert
-from speed_converteer import speed_convert
+from speed_converter import speed_convert
 from jsondump import jsondump
 
 
