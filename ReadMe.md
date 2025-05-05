@@ -39,7 +39,8 @@ Longitude and Latitude are given in a `DDMM.MMMM` format, where `D` and `M` are 
 This means we can isolate the first two to three characters to determine the degrees, then troncate what is left of the interger part for the minutes. Lastly the decimal value are the seconds in minutes, we simply multiply by `60` to obtain the amount of seconds.
 
 This supplies us with the variables to create a DMS coordonate (D°, M', S'').
-From the DMS we can easily determine the Decimal Degree following this formula: $D~dec~ = D° + M/60 + S/3600$
+From the DMS we can easily determine the Decimal Degree following this formula: 
+$D_dec = D° + M/60 + S/3600$
 
 Running `convLat()` or `convLng()` will return the decimal degree of a supplied RMC message when calling the class. Alternativly `convPosition()` can be used to return both Latitude and Longitude.
 
