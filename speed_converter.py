@@ -8,7 +8,7 @@ class speed_convert:
 
     def knotsToMps(self):
         # Convert knots into m/s
-        self.speed = round(self.__RMCspeed * self.__knToMps, 2)
+        self.speed = round(self.__RMCspeed * self.__knToMps, 4)
         return (self.speed)
 
     def getCog(self):

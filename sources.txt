@@ -36,3 +36,9 @@ https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8
 
 NMEA Analyser for testing
 https://swairlearn.bluecover.pt/nmea_analyser
+
+How to write a readme.md
+https://www.reddit.com/r/learnprogramming/comments/vxfku6/how_to_write_a_readme/
+
+ReadMe.md template
+https://github.com/alec-chernicki/portfolio-template/tree/master

@@ -1,6 +1,7 @@
 import unittest
 from checksum import checksum
 from pos_converter import position_convert
+from speed_converter import speed_convert
 
 
 class TestChecksum(unittest.TestCase):
@@ -63,8 +64,8 @@ class TestPositionConvert(unittest.TestCase):
 
     def testConvLngWest(self):
 
-        rmc = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
-        pos = position_convert(rmc)
+        testRMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
+        pos = position_convert(testRMCdata)
         lng = pos.convLng()
         # expected_lat = (4 + 8/60 + ((0.9009 % 1) * 60) / 3600) *-1
 
@@ -73,8 +74,8 @@ class TestPositionConvert(unittest.TestCase):
 
     def testConvLngEast(self):
 
-        rmc = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,E,9.09,309.61,201022,,,A*74"
-        pos = position_convert(rmc)
+        testRMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,E,9.09,309.61,201022,,,A*74"
+        pos = position_convert(testRMCdata)
         lng = pos.convLng()
         # expected_lat = 4 + 8/60 + ((0.9009 % 1) * 60) / 3600
 
@@ -82,11 +83,30 @@ class TestPositionConvert(unittest.TestCase):
 
     def testconvPosition(self):
 
-        rmc = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
-        pos = position_convert(rmc)
+        testRMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
+        pos = position_convert(testRMCdata)
         lat, lng = pos.convPosition()
         self.assertAlmostEqual(lat, 50.3598, places=4)
         self.assertAlmostEqual(lng, -4.1483, places=4)
+
+
+class TestSpeedConvert(unittest.TestCase):
+
+    def testKnotsToMps(self):
+        testRMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
+        speed = speed_convert(testRMCdata)
+        expected_speed = round(9.09 * (1852 / 3600), 4)
+        self.assertAlmostEqual(speed.knotsToMps(), expected_speed, places=4)
+
+    def testGetCog(self):
+        testRMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
+        speed = speed_convert(testRMCdata)
+        self.assertEqual(speed.getCog(), 309)
+
+    def testZeroSpeed(self):
+        testRMCdata = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,0.00,180.00,201022,,,A*74"
+        speed = speed_convert(testRMCdata)
+        self.assertEqual(speed.knotsToMps(), 0.0)
 
 
 if __name__ == '__main__':
