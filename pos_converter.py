@@ -15,12 +15,24 @@ class position_convert:
 
     def __DMS(self, coord, coordIndicator, x):
 
-        self.__dec = int(coord[:x])
-        self.__min = int(coord[-2:])
+        # get the first x characters for the degree value found in the coord variable
+        self.__deg = int(coord[:x])
+
+        # extract integer from coordonate part of the RMC Message
+        self.degMin = math.modf(float(coord))[1]
+        # from integer extract last 4 characters and turn back into int - this is the minutes
+        self.__min = int(float(str(self.degMin)[-4:]))
+
+        # extract the decimal value fround in the coord value and *60 to get the seconds
         self.__sec = round(math.modf(float(coord))[0] * 60, 4)
 
+        # Print for test
+        # print(self.__deg)
+        # print(self.__min)
+        # print(self.__sec)
+
         return (
-            self.__dec,
+            self.__deg,
             self.__min,
             self.__sec,
             coordIndicator
@@ -29,7 +41,8 @@ class position_convert:
     def __convDecDeg(self, coord, coordIndicator, x):
 
         self.__DMS(coord, coordIndicator, x)
-        self.__decDeg = round(self.__dec + self.__min/60 + self.__sec, 4)
+        self.__decDeg = round(
+            self.__deg + (self.__min/60) + (self.__sec/3600), 4)
         if coordIndicator == "S" or coordIndicator == "W":
             self.__decDeg *= -1
         # return(self.__DMS(coord, coordIndicator, x),decDeg)

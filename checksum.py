@@ -1,23 +1,22 @@
 import re
 
-
 class checksum:
     def __init__(self, RMCdata):
         if RMCdata.startswith("$"):
-            self.__RMCdata = RMCdata[1:]
+            self.__rmcData = RMCdata[1:]
         else:
-            self.__RMCdata = RMCdata
+            self.__rmcData = RMCdata
 
     def __parseNMEA(self):
         # Split string into 2 parts from the *
-        self.__NMEAdata, self.__cksum = re.split('\*', self.__RMCdata)
+        self.__nmeaData, self.__cksum = re.split('\*', self.__rmcData)
         # Convert the checksum result into hex for verification
         self.__cksum = '0x' + self.__cksum
 
     def __checksumCalc(self):
         self.__calc_cksum = 0
         # Start XOR checksum calculation of the RMC Message
-        data = self.__NMEAdata
+        data = self.__nmeaData
         for c in data:
             self.__calc_cksum ^= ord(c)
         return self.__calc_cksum
@@ -27,7 +26,7 @@ class checksum:
         self.__checksumCalc()
         # Return tuple
         return (
-            self.__NMEAdata,
+            self.__nmeaData,
             self.__cksum,
             hex(self.__calc_cksum)
         )

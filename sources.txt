@@ -33,3 +33,6 @@ https://peps.python.org/pep-0008/
 
 autopep8 for VSCode:
 https://marketplace.visualstudio.com/items?itemName=ms-python.autopep8
+
+NMEA Analyser for testing
+https://swairlearn.bluecover.pt/nmea_analyser
