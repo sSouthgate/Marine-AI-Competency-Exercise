@@ -10,13 +10,22 @@ It must adeer to OOP principles and the Pep8 style guide.
 
 ## Running the Program (`main()`):
 
+cd into the directory and run
+`python3 '.\Marine AI Competency Exercise\main.py'`
+
+Expected output:
+```
+Enter NMEA Sentence$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74
+NMEA Sentence input: $GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74
+chesksum successfully validated with result: 0x74
+JSON export string: 
+ {'LAT': 50.3598, 'LON': -4.1483, 'SOG': 4.6763, 'COG': 309}
+ ```
+
 Running the main program will prompt the user to input an NMEA sentence.
 Several NMEA sentences are provided in `NMEA_Sentences.txt` for validation of the written code.
 
 It will then run and print the JSON string to the terminal after creating the associated file and folder.
-
-cd into 
-`python '.\Marine AI Competency Exercise\main.py'`
 
 ## How It's Made:
 
