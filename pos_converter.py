@@ -1,5 +1,4 @@
 import math
-import re
 
 
 class position_convert:
@@ -8,43 +7,43 @@ class position_convert:
 
     def __init__(self, RMCdata):
 
-        self.splitRMC = RMCdata.split(",")
-        self.RMClat = self.splitRMC[3]
-        self.RMClng = self.splitRMC[5]
-        self.RMClatIndicator = self.splitRMC[4]
-        self.RMClngIndicator = self.splitRMC[6]
+        self.__splitRMC = RMCdata.split(",")
+        self.__RMClat = self.__splitRMC[3]
+        self.__RMClng = self.__splitRMC[5]
+        self.__RMClatIndicator = self.__splitRMC[4]
+        self.__RMClngIndicator = self.__splitRMC[6]
 
-    def DMS(self, coord, coordIndicator, x):
+    def __DMS(self, coord, coordIndicator, x):
 
-        self.dec = int(coord[:x])
-        self.min = int(coord[-2:])
-        self.sec = round(math.modf(float(coord))[0] * 60, 4)
+        self.__dec = int(coord[:x])
+        self.__min = int(coord[-2:])
+        self.__sec = round(math.modf(float(coord))[0] * 60, 4)
 
         return (
-            self.dec,
-            self.min,
-            self.sec,
+            self.__dec,
+            self.__min,
+            self.__sec,
             coordIndicator
         )
 
-    def convDecDeg(self, coord, coordIndicator, x):
+    def __convDecDeg(self, coord, coordIndicator, x):
 
-        self.DMS(coord, coordIndicator, x)
-        decDeg = round(self.dec + self.min/60 + self.sec, 4)
+        self.__DMS(coord, coordIndicator, x)
+        decDeg = round(self.__dec + self.__min/60 + self.__sec, 4)
         if coordIndicator == "S" or coordIndicator == "W":
             decDeg *= -1
-        # return(self.DMS(coord, coordIndicator, x),decDeg)
+        # return(self.__DMS(coord, coordIndicator, x),decDeg)
         return (decDeg)
 
     def convLat(self):
         """Returns the latitude of the RMS Data in Decimal Degrees
         """
-        return self.convDecDeg(self.RMClat, self.RMClatIndicator, 2)
+        return self.__convDecDeg(self.__RMClat, self.__RMClatIndicator, 2)
 
     def convLng(self):
         """Returns the longitude of the RMS Data in Decimal Degrees
         """
-        return self.convDecDeg(self.RMClng, self.RMClngIndicator, 3)
+        return self.__convDecDeg(self.__RMClng, self.__RMClngIndicator, 3)
 
     def convposition(self):
         """Returns the latitude and longitude of the RMS Data as a double(Lat, Lng) in Decimal Degrees

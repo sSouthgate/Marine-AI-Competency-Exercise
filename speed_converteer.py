@@ -1,20 +1,20 @@
 class speed_convert:
     def __init__(self, RMCdata):
-        self.splitRMC = RMCdata.split(",")
-        self.RMCspeed = float(self.splitRMC[7])
-        self.cog = int(float(self.splitRMC[8]))
+        self.__splitRMC = RMCdata.split(",")
+        self.__RMCspeed = float(self.__splitRMC[7])
+        self.__cog = int(float(self.__splitRMC[8]))
         # 1 Knot = 1852 m/h
-        self.knToMph = 1852
+        self.__knToMph = 1852
         # 1 m/h = 0.0002777778 m/s
-        self.mphToMps = 0.0002777778
+        self.__mphToMps = 0.0002777778
 
     def knotsToMps(self):
         # Convert knots into m/s
-        self.speed = round(self.RMCspeed * self.knToMph * self.mphToMps, 2)
+        self.speed = round(self.__RMCspeed * self.__knToMph * self.__mphToMps, 2)
         return (self.speed)
 
     def getCog(self):
-        return (self.cog)
+        return (self.__cog)
 
 
 if __name__ == "__main__":

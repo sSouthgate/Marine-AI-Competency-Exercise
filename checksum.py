@@ -4,37 +4,37 @@ import re
 class checksum:
     def __init__(self, RMCdata):
         if RMCdata.startswith("$"):
-            self.RMCdata = RMCdata[1:]
+            self.__RMCdata = RMCdata[1:]
         else:
-            self.RMCdata = RMCdata
+            self.__RMCdata = RMCdata
 
-    def parseNMEA(self):
+    def __parseNMEA(self):
         # Split string into 2 parts from the *
-        self.NMEAdata, self.cksum = re.split('\*', self.RMCdata)
+        self.__NMEAdata, self.__cksum = re.split('\*', self.__RMCdata)
         # Convert the checksum result into hex for verification
-        self.cksum = '0x' + self.cksum
+        self.__cksum = '0x' + self.__cksum
 
-    def checksumCalc(self):
-        self.calc_cksum = 0
+    def __checksumCalc(self):
+        self.__calc_cksum = 0
         # Start XOR checksum calculation of the RMC Message
-        data = self.NMEAdata
+        data = self.__NMEAdata
         for c in data:
-            self.calc_cksum ^= ord(c)
-        return self.calc_cksum
+            self.__calc_cksum ^= ord(c)
+        return self.__calc_cksum
 
     def checksumResult(self):
-        self.parseNMEA()
-        self.checksumCalc()
+        self.__parseNMEA()
+        self.__checksumCalc()
         # Return tuple
         return (
-            self.NMEAdata,
-            self.cksum,
-            hex(self.calc_cksum)
+            self.__NMEAdata,
+            self.__cksum,
+            hex(self.__calc_cksum)
         )
 
     def checksumValidate(self):
         _, _, calc = self.checksumResult()
-        return self.cksum == calc
+        return self.__cksum == calc
 
 
 if __name__ == "__main__":
