@@ -52,7 +52,7 @@ class checksum:
 
 if __name__ == "__main__":
 
-    RMCmessage = "justastring"
+    RMCmessage = "$GPRMC,112000.000,A,5021.5874,N,00408.9009,W,9.09,309.61,201022,,,A*74"
     nmea = checksum(RMCmessage)
     print("parsed result:", nmea.checksumResult())
     print("checksum is:", nmea.checksumValidate())
