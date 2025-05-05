@@ -58,7 +58,7 @@ class position_convert:
         """
         return self.__convDecDeg(self.__RMClng, self.__RMClngIndicator, 3)
 
-    def convposition(self):
+    def convPosition(self):
         """Returns the latitude and longitude of the RMS Data as a double(Lat, Lng) in Decimal Degrees
         """
         return self.convLat(), self.convLng()
