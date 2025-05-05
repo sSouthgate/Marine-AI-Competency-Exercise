@@ -11,15 +11,15 @@ It must adeer to OOP principles and the Pep8 style guide.
 ## Running the Program (`main()`):
 
 # Commandline or IDE
-cd into the `Marine_AI_Competency_Exercise` directory and run
-`python3 '.\Marine AI Competency Exercise\main.py'`
+cd into the `.\Marine_AI_Competency_Exercise` directory and run
+```python3 '.\Marine AI Competency Exercise\main.py'```
 
 # Building and running a docker container
 Make sure you have docker installed with:
-`docker -v`
+```docker -v```
 cd into the `Marine_AI_Competency_Exercise` directory and run
-`docker build -t nmea_decode .`
-`docker run --volume .\:/usr/local/app/Marine_AI_Competency_Exercise -i -t nmea_decode`
+```docker build -t nmea_decode .```
+```docker run --volume .\:/usr/local/app/Marine_AI_Competency_Exercise -i -t nmea_decode```
 
 Running the main program or container will prompt the user to input an NMEA sentence.
 Several NMEA sentences are provided in `NMEA_Sentences.txt` for validation of the written code.
