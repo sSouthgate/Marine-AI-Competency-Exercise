@@ -19,6 +19,9 @@ https://rietman.wordpress.com/2008/09/25/how-to-calculate-the-nmea-checksum/
 NMEA sentence checksum (Python recipe):
 https://code.activestate.com/recipes/576789-nmea-sentence-checksum/
 
+NMEA 0183 wiki page - used for GPRMC referances:
+https://en.wikipedia.org/wiki/NMEA_0183
+
 NMEA 0183 wiki page (FR):
 https://fr.wikipedia.org/wiki/NMEA_0183
 
