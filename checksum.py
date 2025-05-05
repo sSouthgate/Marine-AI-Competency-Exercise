@@ -24,7 +24,7 @@ class checksum:
             self.__cksum = "0x" + self.__cksum
         
         except Exception as e:
-            raise ValueError(f"Error parsing NMEA: {e}")
+            raise ValueError("Error parsing NMEA: %s" %e)
 
     def __checksumCalc(self):
         self.__calc_cksum = 0
@@ -52,7 +52,7 @@ class checksum:
 
 if __name__ == "__main__":
 
-    RMCmessage = "just*a* string"
+    RMCmessage = "justastring"
     nmea = checksum(RMCmessage)
     print("parsed result:", nmea.checksumResult())
     print("checksum is:", nmea.checksumValidate())
