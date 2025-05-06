@@ -94,6 +94,11 @@ To accompagny the code there is a supplied test suite to ensure that all functio
 
 The suite uses known valid and unvalid NMEA sentences the test the various functions called through the project. The constants used have been cross referenced using online NMEA converters to ensure accuracy of the test environment.
 
+To run:
+```bash
+python3 '.\Marine AI Competency Exercise\testsuite.py'
+```
+
 ## Lessons Learned:
 
 I had never been required to run a checksum. This project has taught me the value in using them but also how to look for the information used to validate them. Trying out different NMEA sentences allowed me to see errors and oversights originaly made.
